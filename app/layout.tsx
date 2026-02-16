@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     title: "FreshCheck - 식재료 보관법 검색",
     description: "식재료의 냉장, 냉동, 상온 보관 기간을 한눈에 확인하세요.",
   },
+  other: {
+    "google-adsense-account": "ca-pub-9119786895700359",
+  },
 };
 
 export default function RootLayout({
