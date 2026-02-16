@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import SearchBar from "@/components/main/SearchBar";
 import SearchResultCards from "@/components/main/SearchResultCards";
 
+
 export async function generateMetadata({
   searchParams,
 }: {
@@ -64,6 +65,7 @@ export default async function SearchPage({
           </div>
         )}
       </div>
+
     </div>
   );
 }
