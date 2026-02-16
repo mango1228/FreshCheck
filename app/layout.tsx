@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FreshCheck",
-  description: "FreshCheck",
+  title: "FreshCheck - 식재료 보관법 검색",
+  description: "식재료의 냉장, 냉동, 상온 보관 기간을 한눈에 확인하세요.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
