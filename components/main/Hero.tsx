@@ -16,13 +16,16 @@ const decorativeEmoji = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-      {/* Soft radial gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-fresh-50)_0%,_transparent_70%)] pointer-events-none" />
+      {/* Layered gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-fresh-100)_0%,_var(--color-fresh-50)_30%,_transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-warm-100)_0%,_transparent_50%)] opacity-30 pointer-events-none" />
 
-      {/* Decorative floating emoji */}
-      {decorativeEmoji.map((item, i) => (
-        <FreshIcon key={i} {...item} />
-      ))}
+      {/* Decorative floating emoji — hidden on small screens */}
+      <div className="hidden sm:block">
+        {decorativeEmoji.map((item, i) => (
+          <FreshIcon key={i} {...item} />
+        ))}
+      </div>
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center text-center">
@@ -31,8 +34,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-fresh-700">
-            🌿 FreshCheck
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-fresh-600 to-fresh-500 bg-clip-text text-transparent">
+              FreshCheck
+            </span>
           </h1>
         </motion.div>
 
@@ -40,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mt-4 text-lg md:text-xl text-neutral-600 max-w-md"
+          className="mt-4 text-lg md:text-xl text-neutral-600 max-w-xs sm:max-w-md"
         >
           보관법부터 남은 소비기한까지, 내 식재료를 freshcheck하세요
         </motion.p>

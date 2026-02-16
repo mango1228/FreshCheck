@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "tsx --env-file .env.local scripts/seed-ingredients.ts"
   },
   "dependencies": {
+    "@google/genai": "^1.41.0",
+    "@supabase/supabase-js": "^2.95.3",
     "motion": "^12.34.0",
     "next": "16.1.6",
     "react": "19.2.3",
